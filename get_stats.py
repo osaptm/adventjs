@@ -13,7 +13,7 @@ def get_challenge_stats(challenge_id):
 
 
 def main():
-    for i in range(1, 25):
+    for i in range(1, 26):
         challenge_id = str(i).zfill(2)
         stats = get_challenge_stats(challenge_id)
         print(challenge_id, stats)
