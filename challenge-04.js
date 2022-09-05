@@ -1,5 +1,17 @@
 'use strict';
-
+function createXmasTree_mario(height) { console.time('loop');
+    if(height<1||height>100||typeof height!='number') return false;
+       let base = height + (height-1); let cadena = ''; let tronco = '';
+       for (let index = 0; index < height; index++) {
+           let cantidad_asteriscos = (index+1)+index;
+           let guion = '_'.repeat((base-cantidad_asteriscos)/2);
+           let asteriscos =  '*'.repeat(cantidad_asteriscos);
+           if(index==0){ tronco += `${guion}#${guion}\n${guion}#${guion}`;}
+           cadena += `${guion}${asteriscos}${guion}\n`;
+       }
+       console.timeEnd('loop');
+       return cadena+tronco;
+   }
 function createXmasTree(height) {
     var lines = [];
     var width = height + height - 1;
